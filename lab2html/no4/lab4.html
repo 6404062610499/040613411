@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab4</title>
+</head>
+<body>
+
+    <form>
+        <label for="name">1.ชื่อ(อักขระตัวใหญ่เท่านั้น):</label>
+        <br><input type="text" id="name" name="name" pattern="[A-Z]+" title="กรอกชื่อด้วยอักขระตัวใหญ่เท่านั้น" required>
+
+        <br><br><label for="student-id">2.รหัสนักศึกษา (ตัวอย่าง: 61-040626-1234-5):</label>
+        <br><input type="text" id="student-id" name="student-id" pattern="\d{2}-\d{6}-\d{4}-\d{1}" title="กรอกรหัสนักศึกษาตามรูปแบบ 61-040626-1234-5" required>
+
+        <br><br><label for="house-number">บ้านเลขที่ (ตัวอย่าง:: 235/4 69):</label>
+        <br><input type="text" id="house-number" name="house-number" pattern="\d{3}/\d{1} \d{2}" title="กรอกบ้านเลขที่ตามรูปแบบ 235/4 69" required>
+
+        <br><br><label for="product-code">รหัสสินค้า (ตัวอย่าง: AAA99):</label>
+        <br><input type="text" id="product-code" name="product-code" pattern="[A-Z]{3}\d{2}" title="กรอกรหัสสินค้าตามรูปแบบ AAA99" required>
+
+        <br><br><label for="thai-name">ชื่อ (ภาษาไทยเท่านั้น):</label>
+        <br><input type="text" id="thai-name" name="thai-name" pattern="^[ก-๙\s]+$" title="กรอกชื่อด้วยภาษาไทยเท่านั้น" required>
+        
+        <br><br><input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
