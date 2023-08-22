@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic js</title>
+    <script>
+        let student = [
+        {
+            fullname: 'นายตั้งใจ เรียนมาก',
+            age: 18,
+            year: 1,
+            gpa: 3.40,
+            help: true
+        },
+        {
+            fullname: 'นายก ไก่',
+            age: 18,
+            year: 1,
+            gpa: 2.80,
+            help: true
+        },
+        {
+            fullname: 'นายข ไข่',
+            age: 19,
+            year: 2,
+            gpa: 2.60,
+            help: true
+        },
+        {
+            fullname: 'นายส่งาน ตลอดมา',
+            age: 19,
+            year: 2,
+            gpa: 3.00,
+            help: false
+        },
+        {
+            fullname: 'นายค ควาย',
+            age: 19,
+            year: 2,
+            gpa: 3.00,
+            help: true
+        },
+        {
+            fullname: 'นายง งู',
+            age: 20,
+            year: 3,
+            gpa: 2.60,
+            help: true
+        },
+        {
+            fullname: 'นายส่งาน ตลอดมา',
+            age: 20,
+            year: 3,
+            gpa: 3.00,
+            help: false
+        },
+        {
+            fullname: 'นางสาวใสใจ่ ดีงาม',
+            age: 20,
+            year: 3,
+            gpa: 2.90,
+            help: true
+        },
+        {
+            fullname: 'นายจ จาน',
+            age: 21,
+            year: 4,
+            gpa: 2.60,
+            help: true
+        },
+        {
+            fullname: 'นายฉ ฉิ่ง',
+            age: 21,
+            year: 4,
+            gpa: 3.00,
+            help: false
+        },
+        {
+            fullname: 'นางช ช้าง',
+            age: 21,
+            year: 4,
+            gpa: 2.90,
+            help: true
+        },
+        
+        ]
+
+        let qualified = [];
+
+        for (let i = 0; i<student.length; i++) {
+            let currentYear = new Date().getFullYear();
+            let birthYear = currentYear+543 - student[i].age;
+            if(student[i].gpa < 3.20 && student[i].year < 2){
+                console.log(student[i].fullname+" เกิดเมื่อปี "+birthYear+" ไม่ได้ทุนการศึกษาเนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์");
+            }
+            else if(student[i].gpa >= 3.20 && student[i].year < 2){
+                console.log(student[i].fullname+" เกิดเมื่อปี "+birthYear+" ได้ทุนการศึกษาเนื่องจากเกรดเฉลี่ยถึงเกณฑ์");
+                qualified.push(student[i]);
+            }
+            else if(student[i].year >= 2 && student[i].help == true && student[i].gpa >= 2.75){
+                console.log(student[i].fullname+" เกิดเมื่อปี "+birthYear+" ได้ทุนการศึกษาเนื่องจากเป็นนักศึกษาชั้นปีที่ "+student[i].year+ " ที่ได้ช่วยงานภาควิชาและเกรดเฉลี่ยถึงเกณฑ์");
+                qualified.push(student[i]);
+            }
+            else if(student[i].year >= 2 && student[i].help == false && student[i].gpa >= 2.75){
+                console.log(student[i].fullname+" เกิดเมื่อปี "+birthYear+" ไม่ได้ทุนการศึกษาเนื่องจากเป็นนักศึกษาชั้นปีที่ "+student[i].year+ " ที่ไม่ได้ช่วยงานภาควิชาแต่เกรดเฉลี่ยถึงเกณฑ์");
+            }
+            else if(student[i].year >= 2 && student[i].help == true && student[i].gpa < 2.75){
+                console.log(student[i].fullname+" เกิดเมื่อปี "+birthYear+" ไม่ได้ทุนการศึกษาเนื่องจากเป็นนักศึกษาชั้นปีที่ "+student[i].year+ " ที่ได้ช่วยงานภาควิชาแต่เกรดเฉลี่ยไม่ถึงเกณฑ์");
+            }       
+        }
+        y1 = [];
+        y2 = [];
+        y3 = [];
+        y4 = [];
+        for(let i = 0; i<qualified.length; i++){
+            switch(qualified[i].year){
+                case 1:
+                    y1.push(qualified[i]);
+                    break;
+                case 2:
+                    y2.push(qualified[i]);
+                    break;
+                case 3:
+                    y3.push(qualified[i]);   
+                    break;
+                case 4:
+                    y4.push(qualified[i]);   
+                    break;
+            }
+        }
+        console.log("ชั้นปีที่ 1")
+        if(y1.length == 0){
+            console.log("ไม่มี");
+        }
+        else{
+            for(let i = 0; i < y1.length; i++){
+                console.log(y1[i].fullname+" ได้ทุนการศึกษาเนื่องจากเกรดเฉลี่ยถึงเกณฑ์");
+            }
+        }
+
+        console.log("ชั้นปีที่ 2")
+        if(y2.length == 0){
+            console.log("ไม่มี");
+        }
+        else{
+            for(let i = 0; i < y2.length; i++){
+                console.log(y2[i].fullname+" ได้ทุนการศึกษาเนื่องจากได้ช่วยงานภาควิชาและเกรดเฉลี่ยถึงเกณฑ์");
+            }
+        }
+
+        console.log("ชั้นปีที่ 3")
+        if(y3.length == 0){
+            console.log("ไม่มี");
+        }
+        else{
+            for(let i = 0; i < y3.length; i++){
+                console.log(y3[i].fullname+" ได้ทุนการศึกษาเนื่องจากได้ช่วยงานภาควิชาและเกรดเฉลี่ยถึงเกณฑ์");
+            }
+        }
+
+        console.log("ชั้นปีที่ 4")
+        if(y4.length == 0){
+            console.log("ไม่มี");
+        }
+        else{
+            for(let i = 0; i < y4.length; i++){
+                console.log(y4[i].fullname+" ได้ทุนการศึกษาเนื่องจากได้ช่วยงานภาควิชาและเกรดเฉลี่ยถึงเกณฑ์");
+            }
+        }
+    </script>
+</body>
+</html>

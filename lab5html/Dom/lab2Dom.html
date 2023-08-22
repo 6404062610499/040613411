@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .green-text {
+        color: green;
+    }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var nameInput = document.getElementById('name');
+    var ageInput = document.getElementById('age');
+    var birthdateInput = document.getElementById('birthdate');
+    
+    nameInput.addEventListener('blur', function() {
+        changeTextColor(nameInput);
+    });
+    
+    ageInput.addEventListener('blur', function() {
+        changeTextColor(ageInput);
+    });
+    
+    birthdateInput.addEventListener('blur', function() {
+        changeTextColor(birthdateInput);
+    });
+});
+
+function changeTextColor(inputElement) {
+    if (inputElement.value !== "") {
+        inputElement.classList.add("green-text");
+    } else {
+        inputElement.classList.remove("green-text");
+    }
+}
+</script>
+</head>
+<body>
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br><br>
+    
+    <label for="age">Age:</label>
+    <input type="text" id="age"><br><br>
+    
+    <label for="birthdate">Birthdate:</label>
+    <input type="text" id="birthdate"><br><br>
+</form>
+</body>
+</html>
