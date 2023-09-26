@@ -11,7 +11,7 @@
         ?>
         <?php while ($row = $stmt->fetch()) : ?>
             <div>
-                <img src='product_photo/<?=$row["pid"]?>.jpg' width='100'><br>
+                <!-- <img src='product_photo/<?=$row["pid"]?>.jpg' width='100'><br> -->
                 ชื่อสมาชิก: <?=$row ["name"]?><br> 
                 ที่อยู่ : <?=$row ["address"]?><br>
                 อีเมลล์ : <?=$row ["email"]?><br>
