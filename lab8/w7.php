@@ -12,7 +12,9 @@
 
     อีเมล : <input type="email" name="email"><br>
     <input type="submit" value="เพิ่มข้อมูล ">
-
+    เพิ่มรูปภาพ <label for="img"> :</label>
+    <input type="file" id="img" name="img" accept="image/*"><br>
+    <input type="submit" value="เพิ่มข้อมูล ">
 </form>
 </body>
 </html>
