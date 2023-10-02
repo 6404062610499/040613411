@@ -16,7 +16,7 @@ document.location = "w6delete.php?username=" + username;
     while ($row = $stmt->fetch()) {
         echo "ชื่อสมาชิก : " . $row ["name"] . "<br>";
         echo "ที่อยู่ : " . $row ["address"] . "<br>";
-        echo "อีเมล " . $row ["email"] . " บาท <br>";
+        echo "อีเมล " . $row ["email"] . " <br>";
         echo "<a href='editform.php?username=" . $row ["username"] . "'>แก้ไข</a> | ";
         echo "<a href='w6delete.php' onclick='confirmDelete(\"" . $row ["username"] . "\")'>ลบ</a>";
         echo "<hr>\n";
